@@ -27,10 +27,16 @@ public class ControladorPrototype {
 
   @GetMapping("/")
   public void mostrarInfo() {
+    System.out.println("Thread: " + Thread.currentThread().getName());
+    System.out.println("ID controlador: " + this.hashCode() + " / " + this.toString());
+    System.out.println("ID servicioPrototype: " + servicioPrototype.hashCode() + " / " + servicioPrototype.toString());
+    System.out.println("ID servicioRequest: " + servicioRequest.hashCode() + " / " + servicioRequest.toString());
+    System.out.println("ID servicioSingleton: " + servicioSingleton.hashCode() + " / " + servicioSingleton.toString());
 
-    System.out.println("ID controlador: " + this.hashCode());
-    System.out.println("ID servicioPrototype: " + servicioPrototype.hashCode());
-    System.out.println("ID servicioRequest: " + servicioRequest.hashCode());
-    System.out.println("ID servicioSingleton: " + servicioSingleton.hashCode());
+    try {
+      Thread.sleep(10000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
   }
 }

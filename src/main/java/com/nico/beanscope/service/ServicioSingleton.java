@@ -17,7 +17,6 @@ public class ServicioSingleton implements Servicio {
       e.printStackTrace();
     }
     System.out.println("");
-
   }
 
   @Override
